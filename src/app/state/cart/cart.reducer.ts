@@ -18,5 +18,13 @@ export const cartReducer = createReducer(
             return state.map(p => p.id === product.id ? { ...p, quantity: p.quantity + product.quantity } : { ...p, quantity: p.quantity });
         }
         return [...state, product];
-    })
+    }),
+    on(CartActions.removeProduct, (state, { id }) =>
+        state.filter(p => p.id !== id)
+    ),
+    on(CartActions.updateQuantity, (state, { id, quantity }) => 
+        state.map(p => 
+            p.id === id ? { ...p, quantity } : p
+        )
+    )
 );

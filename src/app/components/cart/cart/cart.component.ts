@@ -4,6 +4,7 @@ import { Product } from '../../../models/product.model';
 import { Store } from '@ngrx/store';
 import { selectCart, selectCartTotal } from '../../../state/cart/cart.selector';
 import { CommonModule } from '@angular/common';
+import { CartActions } from '../../../state/cart/cart.actions';
 
 @Component({
   selector: 'app-cart',
@@ -23,4 +24,10 @@ export class CartComponent implements OnInit {
 
     ngOnInit(): void {
     }
+
+    onRemoveFromCart(id: string){
+        this.store.dispatch(CartActions.removeProduct({ id }));
+    }
+
+    onQuantityChange(event: Event, productId: string){}
 }
