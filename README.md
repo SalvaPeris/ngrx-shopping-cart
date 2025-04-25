@@ -1,6 +1,8 @@
 # ShoppingCart
+We’ll explore how to implement state management in Angular using NgRx by building a simple shopping cart application. We’ll cover the core concepts of NgRx, such as the Store, Actions, Reducers, Selectors, and Effects, and demonstrate how these pieces fit together to manage the state of your application effectively.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+![image](https://github.com/user-attachments/assets/59dd0630-c63c-49f2-ba18-d9f7b457507f)
+
 
 ## Development server
 
