@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { selectCart, selectCartTotal } from '../../../state/cart/cart.selector';
 import { CommonModule } from '@angular/common';
 import { CartActions } from '../../../state/cart/cart.actions';
+import { CartTotal } from '../../../models/cart-total.model';
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +16,7 @@ import { CartActions } from '../../../state/cart/cart.actions';
 })
 export class CartComponent implements OnInit {
     cart$: Observable<ReadonlyArray<Product>>;
-    cartTotal$: Observable<number>;
+    cartTotal$: Observable<CartTotal>;
 
     constructor(private store: Store){
         this.cart$ = this.store.select(selectCart);

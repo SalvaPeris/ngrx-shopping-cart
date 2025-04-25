@@ -15,7 +15,9 @@ export const cartReducer = createReducer(
     on(CartActions.addProduct, (state, { product }) =>{
         const existingProduct = state.find(p => p.id === product.id);
         if (existingProduct) {
-            return state.map(p => p.id === product.id ? { ...p, quantity: p.quantity + product.quantity } : { ...p, quantity: p.quantity });
+            return state.map(p => 
+                p.id === product.id ? { ...p, quantity: p.quantity + product.quantity } : p
+            );
         }
         return [...state, product];
     }),
