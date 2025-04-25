@@ -30,5 +30,10 @@ export class CartComponent implements OnInit {
         this.store.dispatch(CartActions.removeProduct({ id }));
     }
 
-    onQuantityChange(event: Event, productId: string){}
+    onQuantityChange(event: Event, productId: string){
+        const inputElement = event.target as HTMLInputElement;
+        let quantity = parseInt(inputElement.value, 10);
+
+        this.store.dispatch(CartActions.updateQuantity({ id: productId, quantity: quantity }));
+    }
 }
